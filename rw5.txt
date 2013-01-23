@@ -1,0 +1,57 @@
+   _       _ _(_)_     |  A fresh approach to technical computing
+  (_)     | (_) (_)    |  Documentation: http://docs.julialang.org
+   _ _   _| |_  __ _   |  Type "help()" to list help topics
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 0.0.0+107562765.re7f1.dirty
+ _/ |\__'_|_|_|\__'_|  |  Commit e7f18520e0 (2013-01-18 21:11:51)*
+|__/                   |
+
+julia> @everywhere begin if myid() != 1 reload("rw5.jl") end end                                                                                                                   
+        From worker 2:  Initial Conditions:
+        From worker 2:  12x12 Int64 Array:
+        From worker 2:   0  0  0   0   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0  -1  -1   0  0  0  0
+        From worker 2:   0  0  0  -1   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0  -1   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0  -1  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0  -1  0  0  0
+        From worker 2:   0  0  0   0  -1  -1   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0   0  0  0  0
+        From worker 2:   0  0  0   0   0   0   0   0   0  0  0  0
+
+
+        From worker 63: Solution:
+        From worker 63: 12x12 Int64 Array:
+        From worker 63:  1  1  0   0   1   1   1   1   1  1  0  0
+        From worker 63:  0  1  1   1   1   0   0   1   1  1  0  0
+        From worker 63:  0  0  0   0   0   1   1   1   0  1  1  1
+        From worker 63:  0  0  1   1   1   1  -1  -1   0  1  0  1
+        From worker 63:  0  1  1  -1   0   0   0   0   1  1  0  1
+        From worker 63:  0  1  0  -1   1   1   1   1   1  0  0  1
+        From worker 63:  0  1  1   1   1   1   1   0  -1  0  1  1
+        From worker 63:  0  0  0   1   0   0   1   0  -1  1  1  0
+        From worker 63:  1  1  1   1  -1  -1   1   1   0  1  0  0
+        From worker 63:  1  0  0   1   1   1   0   1   1  1  1  0
+        From worker 63:  1  0  0   1   0   1   0   0   1  0  1  0
+        From worker 63:  1  1  1   1   0   1   1   1   1  0  1  1
+        From worker 63: I (#63/70) found the solution in ~3.14 days
+
+
+===========================================================================
+top - 19:17:40 up 4 days,  3:25,  6 users,  load average: 68.38, 68.57, 68.72
+Tasks: 586 total,  70 running, 514 sleeping,   2 stopped,   0 zombie
+Cpu(s): 84.9%us,  0.2%sy,  0.0%ni, 14.9%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:  1056642160k total, 25430748k used, 1031211412k free,   834448k buffers
+Swap: 18632700k total,        0k used, 18632700k free,  8124932k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                                                                             
+81642 jameson   20   0  271m  73m 8872 R   99  0.0   4527:02 julia-release-b                                                                                                                                                     
+81643 jameson   20   0  337m  75m 8872 R   99  0.0   4523:08 julia-release-b                                                                                                                                                     
+81646 jameson   20   0  401m  75m 8880 R   99  0.0   4519:17 julia-release-b                                                                                                                                                     
+81647 jameson   20   0  401m  74m 8880 R   99  0.0   4521:14 julia-release-b                                                                                                                                                     
+81648 jameson   20   0  401m  74m 8880 R   99  0.0   4515:48 julia-release-b                                                                                                                                                     
+81657 jameson   20   0  399m  72m 8880 R   99  0.0   4521:59 julia-release-b                                                                                                                                                     
+===========================================================================
